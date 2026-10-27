@@ -21,7 +21,9 @@ index.html
 
     }
 
-    body {
+    body { 
+h1 'Balkan Pomaze'
+'Ljudi pomazu ljudima sirom Balkana'
 
       margin: 0;
 
