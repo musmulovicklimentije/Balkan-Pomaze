@@ -1,0 +1,332 @@
+index.html
+<!DOCTYPE html>
+
+<html lang="sr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Balkan Pomaže povezuje ljude kojima je potrebna pomoć sa ljudima koji žele da pomognu.">
+
+  <title>Balkan Pomaže</title>
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family: Arial, sans-serif;
+
+      background: #f4f8f5;
+
+      color: #24352c;
+
+    }
+
+    header {
+
+      background: #146b50;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 28px 16px;
+
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      font-size: 34px;
+
+    }
+
+    header p {
+
+      margin-bottom: 0;
+
+      font-size: 17px;
+
+    }
+
+    nav {
+
+      background: #10563f;
+
+      text-align: center;
+
+      padding: 13px;
+
+    }
+
+    nav a {
+
+      color: white;
+
+      text-decoration: none;
+
+      margin: 0 10px;
+
+      font-weight: bold;
+
+    }
+
+    main {
+
+      max-width: 900px;
+
+      margin: 30px auto;
+
+      padding: 0 16px;
+
+    }
+
+    .hero, .card {
+
+      background: white;
+
+      padding: 25px;
+
+      border-radius: 15px;
+
+      margin-bottom: 20px;
+
+      box-shadow: 0 3px 12px #0000000b;
+
+    }
+
+    .hero {
+
+      text-align: center;
+
+      padding: 40px 25px;
+
+    }
+
+    h2 {
+
+      color: #146b50;
+
+    }
+
+    .button {
+
+      display: inline-block;
+
+      background: #146b50;
+
+      color: white;
+
+      text-decoration: none;
+
+      padding: 13px 20px;
+
+      border-radius: 9px;
+
+      margin: 8px 5px;
+
+      font-weight: bold;
+
+    }
+
+    .button:hover {
+
+      background: #10563f;
+
+    }
+
+    .countries {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      justify-content: center;
+
+    }
+
+    .country {
+
+      background: #e5f2e9;
+
+      color: #146b50;
+
+      padding: 10px 14px;
+
+      border-radius: 20px;
+
+      font-weight: bold;
+
+    }
+
+    footer {
+
+      background: #146b50;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 22px 15px;
+
+      margin-top: 40px;
+
+    }
+
+    footer p {
+
+      margin: 5px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>💚 Balkan Pomaže</h1>
+
+    <p>Ljudi pomažu ljudima.</p>
+
+  </header>
+
+  <nav>
+
+    <a href="#pocetna">Početna</a>
+
+    <a href="#o-nama">O nama</a>
+
+    <a href="#zemlje">Zemlje</a>
+
+    <a href="#kontakt">Kontakt</a>
+
+  </nav>
+
+  <main>
+
+    <section class="hero" id="pocetna">
+
+      <h2>Zajedno možemo više!</h2>
+
+      <p>
+
+        Balkan Pomaže je ideja koja povezuje ljude širom Balkana.
+
+        Ovde ljudi mogu da podele svoju priču, objasne kakva im je
+
+        pomoć potrebna i pronađu druge ljude koji žele da pomognu.
+
+      </p>
+
+      <a class="button" href="#o-nama">Saznaj više</a>
+
+      <a class="button" href="#zemlje">Naš region</a>
+
+    </section>
+
+    <section class="card" id="o-nama">
+
+      <h2>O platformi Balkan Pomaže</h2>
+
+      <p>
+
+        Želimo da napravimo mesto gde ljudi mogu da podele svoje
+
+        potrebe i povežu se sa onima koji žele da pomognu.
+
+        Cilj je da pomoć bude dostupnija ljudima širom regiona.
+
+      </p>
+
+      <p>
+
+        U budućnosti planiramo registraciju korisnika, objavljivanje
+
+        humanitarnih priča, pretragu po zemljama i mogućnost
+
+        direktne pomoći ljudima kojima je potrebna.
+
+      </p>
+
+    </section>
+
+    <section class="card" id="zemlje">
+
+      <h2>Zemlje koje želimo da povežemo</h2>
+
+      <div class="countries">
+
+        <span class="country">🇷🇸 Srbija</span>
+
+        <span class="country">🇧🇦 Bosna i Hercegovina</span>
+
+        <span class="country">🇭🇷 Hrvatska</span>
+
+        <span class="country">🇲🇪 Crna Gora</span>
+
+        <span class="country">🇲🇰 Severna Makedonija</span>
+
+        <span class="country">🇦🇱 Albanija</span>
+
+        <span class="country">🇷🇴 Rumunija</span>
+
+        <span class="country">🇧🇬 Bugarska</span>
+
+        <span class="country">🇸🇮 Slovenija</span>
+
+        <span class="country">🇬🇷 Grčka</span>
+
+      </div>
+
+    </section>
+
+    <section class="card" id="kontakt">
+
+      <h2>Kontakt</h2>
+
+      <p>
+
+        Dobro došli na Balkan Pomaže.
+
+        Zajedno možemo izgraditi zajednicu u kojoj ljudi
+
+        pomažu jedni drugima.
+
+      </p>
+
+      <p><strong>Više informacija uskoro.</strong></p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p><strong>Balkan Pomaže</strong></p>
+
+    <p>Ljudi pomažu ljudima širom Balkana.</p>
+
+    <p>© 2026 Balkan Pomaže</p>
+
+  </footer>
+
+</body>
+
+</html>
