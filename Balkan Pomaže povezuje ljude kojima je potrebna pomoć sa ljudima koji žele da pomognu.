@@ -22,8 +22,6 @@ index.html
     }
 
     body { 
-h1 'Balkan Pomaze'
-'Ljudi pomazu ljudima sirom Balkana'
 
       margin: 0;
 
@@ -47,7 +45,7 @@ h1 'Balkan Pomaze'
 
     }
 
-    header h1 {
+    header h1 {'Balkan Pomaze'
 
       margin: 0;
 
@@ -55,7 +53,7 @@ h1 'Balkan Pomaze'
 
     }
 
-    header p {
+    header p {'Ljudi pomazu ljudima sirom Balkana'
 
       margin-bottom: 0;
 
