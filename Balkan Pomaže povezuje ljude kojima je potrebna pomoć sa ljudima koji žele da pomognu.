@@ -1,332 +1,430 @@
-index.html
+
 <!DOCTYPE html>
-
 <html lang="sr">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Balkan Pomaže povezuje ljude kojima je potrebna pomoć sa ljudima koji žele da pomognu.">
+  <meta name="description" content="Balkan Pomaže povezuje ljude kojima je potrebna pomoć sa ljudima koji žele da pomognu širom Balkana.">
 
-  <title>Balkan Pomaže</title>
+  <meta name="theme-color" content="#146b50">
+
+  <title>Balkan Pomaže | Ljudi pomažu ljudima</title>
 
   <style>
-
     * {
-
       box-sizing: border-box;
-
     }
 
-    body { 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+    }
 
+    body {
       margin: 0;
-
-      font-family: Arial, sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       background: #f4f8f5;
-
       color: #24352c;
+      line-height: 1.7;
+    }
 
+    a {
+      transition: 0.2s ease;
     }
 
     header {
-
-      background: #146b50;
-
+      background: linear-gradient(135deg, #146b50, #0c4936);
       color: white;
-
       text-align: center;
-
-      padding: 28px 16px;
-
+      padding: 45px 20px;
     }
 
-    header h1 {'Balkan Pomaze'
-
+    header h1 {
       margin: 0;
-
-      font-size: 34px;
-
+      font-size: clamp(30px, 6vw, 46px);
+      line-height: 1.3;
     }
 
-    header p {'Ljudi pomazu ljudima sirom Balkana'
-
-      margin-bottom: 0;
-
-      font-size: 17px;
-
+    header p {
+      margin: 12px 0 0;
+      font-size: 18px;
+      color: #e1f4e8;
     }
 
     nav {
-
       background: #10563f;
-
-      text-align: center;
-
-      padding: 13px;
-
+      padding: 12px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
-
       color: white;
-
       text-decoration: none;
-
-      margin: 0 10px;
-
       font-weight: bold;
+      padding: 5px 0;
+    }
 
+    nav a:hover {
+      color: #bce8ca;
     }
 
     main {
-
-      max-width: 900px;
-
-      margin: 30px auto;
-
-      padding: 0 16px;
-
+      width: 100%;
+      max-width: 1000px;
+      margin: 35px auto;
+      padding: 0 18px;
     }
 
-    .hero, .card {
-
+    .hero,
+    .card {
       background: white;
-
-      padding: 25px;
-
-      border-radius: 15px;
-
-      margin-bottom: 20px;
-
-      box-shadow: 0 3px 12px #0000000b;
-
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
 
     .hero {
-
       text-align: center;
+      padding: 55px 28px;
+      border-top: 5px solid #146b50;
+    }
 
-      padding: 40px 25px;
+    .hero h2 {
+      font-size: clamp(27px, 5vw, 38px);
+      margin: 0 0 18px;
+      line-height: 1.3;
+    }
 
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      font-size: 17px;
+      color: #526259;
     }
 
     h2 {
-
       color: #146b50;
-
+      line-height: 1.4;
     }
 
     .button {
-
       display: inline-block;
-
       background: #146b50;
-
       color: white;
-
       text-decoration: none;
-
-      padding: 13px 20px;
-
+      padding: 12px 22px;
       border-radius: 9px;
-
-      margin: 8px 5px;
-
+      margin: 7px 4px;
       font-weight: bold;
-
+      border: 2px solid #146b50;
     }
 
     .button:hover {
-
       background: #10563f;
+      border-color: #10563f;
+      transform: translateY(-2px);
+    }
 
+    .button-secondary {
+      background: white;
+      color: #146b50;
+    }
+
+    .button-secondary:hover {
+      background: #e5f2e9;
+      color: #10563f;
+      border-color: #10563f;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .value {
+      background: #e5f2e9;
+      padding: 22px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .value .emoji {
+      font-size: 34px;
+    }
+
+    .value h3 {
+      color: #146b50;
+      margin: 8px 0;
+    }
+
+    .value p {
+      margin-bottom: 0;
     }
 
     .countries {
-
       display: flex;
-
       flex-wrap: wrap;
-
-      gap: 10px;
-
+      gap: 12px;
       justify-content: center;
-
+      margin-top: 22px;
     }
 
     .country {
-
+      display: inline-block;
       background: #e5f2e9;
-
       color: #146b50;
-
-      padding: 10px 14px;
-
-      border-radius: 20px;
-
+      padding: 10px 16px;
+      border-radius: 30px;
       font-weight: bold;
+      border: 1px solid #d0e7d7;
+    }
 
+    .notice {
+      background: #fff8e7;
+      border-left: 4px solid #d6a333;
+      padding: 15px 18px;
+      border-radius: 6px;
+      margin-top: 20px;
+      color: #59491f;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box p {
+      max-width: 650px;
+      margin: 10px auto 20px;
     }
 
     footer {
-
-      background: #146b50;
-
+      background: #10563f;
       color: white;
-
       text-align: center;
-
-      padding: 22px 15px;
-
-      margin-top: 40px;
-
+      padding: 30px 18px;
+      margin-top: 45px;
     }
 
     footer p {
-
-      margin: 5px;
-
+      margin: 5px 0;
     }
 
-  </style>
+    footer .footer-title {
+      font-size: 21px;
+      font-weight: bold;
+    }
 
+    footer .footer-note {
+      color: #d5e9dd;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 32px 15px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav {
+        gap: 5px 15px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      main {
+        margin: 22px auto;
+        padding: 0 12px;
+      }
+
+      .hero,
+      .card {
+        padding: 23px 18px;
+        border-radius: 12px;
+      }
+
+      .hero {
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .button {
+        padding: 11px 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
-
     <h1>💚 Balkan Pomaže</h1>
-
     <p>Ljudi pomažu ljudima.</p>
-
   </header>
 
-  <nav>
-
+  <nav aria-label="Glavna navigacija">
     <a href="#pocetna">Početna</a>
-
     <a href="#o-nama">O nama</a>
-
+    <a href="#vrednosti">Naše vrednosti</a>
     <a href="#zemlje">Zemlje</a>
-
     <a href="#kontakt">Kontakt</a>
-
   </nav>
 
   <main>
 
     <section class="hero" id="pocetna">
-
-      <h2>Zajedno možemo više!</h2>
+      <h2>Zajedno možemo više! 💚</h2>
 
       <p>
-
         Balkan Pomaže je ideja koja povezuje ljude širom Balkana.
+        Verujemo da svako može da pomogne i da čak i mali gest
+        dobrote može nekome da promeni život.
+      </p>
 
-        Ovde ljudi mogu da podele svoju priču, objasne kakva im je
-
-        pomoć potrebna i pronađu druge ljude koji žele da pomognu.
-
+      <p>
+        Naš cilj je da stvorimo zajednicu u kojoj ljudi mogu
+        da podele svoju priču, pronađu podršku i pomognu
+        onima kojima je pomoć potrebna.
       </p>
 
       <a class="button" href="#o-nama">Saznaj više</a>
-
-      <a class="button" href="#zemlje">Naš region</a>
-
+      <a class="button button-secondary" href="#zemlje">Naš region</a>
     </section>
 
     <section class="card" id="o-nama">
-
       <h2>O platformi Balkan Pomaže</h2>
 
       <p>
-
-        Želimo da napravimo mesto gde ljudi mogu da podele svoje
-
-        potrebe i povežu se sa onima koji žele da pomognu.
-
-        Cilj je da pomoć bude dostupnija ljudima širom regiona.
-
+        Balkan Pomaže je humanitarna inicijativa čija je ideja
+        da poveže ljude kojima je potrebna pomoć sa ljudima
+        koji žele da učine nešto dobro.
       </p>
 
       <p>
-
-        U budućnosti planiramo registraciju korisnika, objavljivanje
-
-        humanitarnih priča, pretragu po zemljama i mogućnost
-
-        direktne pomoći ljudima kojima je potrebna.
-
+        Želimo da izgradimo prostor u kojem će ljudi moći
+        da podele svoje potrebe, predstave humanitarne priče
+        i pronađu pojedince ili organizacije spremne da pomognu.
       </p>
+
+      <p>
+        Verujemo u solidarnost, zajedništvo i snagu dobrih dela.
+        Nije važno odakle dolazimo — važno je da budemo tu
+        jedni za druge.
+      </p>
+    </section>
+
+    <section class="values" id="vrednosti" aria-label="Naše vrednosti">
+
+      <article class="value">
+        <div class="emoji" aria-hidden="true">🤝</div>
+        <h3>Zajedništvo</h3>
+        <p>Povezujemo ljude koji žele da pomognu i one kojima je pomoć potrebna.</p>
+      </article>
+
+      <article class="value">
+        <div class="emoji" aria-hidden="true">💚</div>
+        <h3>Humanost</h3>
+        <p>Verujemo da svaki čovek zaslužuje pažnju, poštovanje i podršku.</p>
+      </article>
+
+      <article class="value">
+        <div class="emoji" aria-hidden="true">🌍</div>
+        <h3>Solidarnost</h3>
+        <p>Želimo da granice ne budu prepreka dobrim delima i međusobnoj pomoći.</p>
+      </article>
 
     </section>
 
     <section class="card" id="zemlje">
-
-      <h2>Zemlje koje želimo da povežemo</h2>
-
-      <div class="countries">
-
-        <span class="country">🇷🇸 Srbija</span>
-
-        <span class="country">🇧🇦 Bosna i Hercegovina</span>
-
-        <span class="country">🇭🇷 Hrvatska</span>
-
-        <span class="country">🇲🇪 Crna Gora</span>
-
-        <span class="country">🇲🇰 Severna Makedonija</span>
-
-        <span class="country">🇦🇱 Albanija</span>
-
-        <span class="country">🇷🇴 Rumunija</span>
-
-        <span class="country">🇧🇬 Bugarska</span>
-
-        <span class="country">🇸🇮 Slovenija</span>
-
-        <span class="country">🇬🇷 Grčka</span>
-
-      </div>
-
-    </section>
-
-    <section class="card" id="kontakt">
-
-      <h2>Kontakt</h2>
+      <h2>Zemlje koje želimo da povežemo 🌍</h2>
 
       <p>
-
-        Dobro došli na Balkan Pomaže.
-
-        Zajedno možemo izgraditi zajednicu u kojoj ljudi
-
-        pomažu jedni drugima.
-
+        Naša vizija je da povežemo ljude iz različitih zemalja
+        regiona i podstaknemo međusobnu pomoć, razumevanje
+        i solidarnost.
       </p>
 
-      <p><strong>Više informacija uskoro.</strong></p>
+      <div class="countries">
+        <span class="country">🇷🇸 Srbija</span>
+        <span class="country">🇧🇦 Bosna i Hercegovina</span>
+        <span class="country">🇭🇷 Hrvatska</span>
+        <span class="country">🇲🇪 Crna Gora</span>
+        <span class="country">🇲🇰 Severna Makedonija</span>
+        <span class="country">🇦🇱 Albanija</span>
+        <span class="country">🇷🇴 Rumunija</span>
+        <span class="country">🇧🇬 Bugarska</span>
+        <span class="country">🇸🇮 Slovenija</span>
+        <span class="country">🇬🇷 Grčka</span>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Kako možemo da pomognemo?</h2>
+
+      <p>
+        Pomoć može imati mnogo oblika: deljenje korisnih informacija,
+        pružanje podrške, povezivanje ljudi, doniranje potrebnih stvari
+        ili saradnja sa humanitarnim organizacijama.
+      </p>
+
+      <p>
+        Dugoročno želimo da razvijemo mogućnosti za objavljivanje
+        humanitarnih priča, pretragu potreba i povezivanje ljudi
+        kojima je potrebna pomoć sa onima koji mogu da je pruže.
+      </p>
+
+      <div class="notice">
+        <strong>Važno:</strong> Ovaj sajt je trenutno početna prezentacija
+        projekta. Objavljivanje zahteva za pomoć, registracija korisnika
+        i obrada donacija još nisu omogućeni.
+      </div>
+    </section>
+
+    <section class="card contact-box" id="kontakt">
+      <h2>Kontaktirajte nas 💌</h2>
+
+      <p>
+        Želite da podržite ideju Balkan Pomaže, predložite saradnju
+        ili podelite ideju za razvoj platforme?
+        Biće nam drago da čujemo vaše predloge.
+      </p>
+
+      <p>
+        Kontakt podaci biće objavljeni kada budu zvanično dostupni.
+      </p>
+
+      <a class="button" href="#pocetna">Nazad na početak ↑</a>
     </section>
 
   </main>
 
   <footer>
-
-    <p><strong>Balkan Pomaže</strong></p>
-
+    <p class="footer-title">💚 Balkan Pomaže</p>
     <p>Ljudi pomažu ljudima širom Balkana.</p>
-
-    <p>© 2026 Balkan Pomaže</p>
-
+    <p class="footer-note">
+      © 2026 Balkan Pomaže. Sva prava zadržana.
+    </p>
   </footer>
 
 </body>
-
 </html>
